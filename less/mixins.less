@@ -1,1 +1,21 @@
 // Mixins in here
+@btn-color: teal;
+@btn-height: 50px;
+.btn-parametric(@color: white, @btn-color: @btn-color, @height: @btn-height) {
+    padding: 5px;
+    width: 80%;
+    color: @color;
+    background-color: @btn-color;
+    border-radius: 10px;
+}
+.destination {
+    .btn {
+        .btn-parametric;
+        cursor: pointer;
+    }
+    
+}
+.btn:hover {
+    background-color: rgb(127, 206, 206);
+    color: black;
+}
